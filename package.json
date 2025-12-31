@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-zapi-icarodev",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node de comunidade n8n para integração com Z-API WhatsApp - Desenvolvido por @icarodev",
   "keywords": [
     "n8n-community-node-package",
@@ -14,11 +14,11 @@
   "license": "MIT",
   "author": {
     "name": "IcaroDev",
-    "url": "https://github.com/icarodev"
+    "url": "https://github.com/icarofffffts"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/icarodev/n8n-nodes-z-api-icarodev"
+    "url": "https://github.com/icarofffffts/n8n-nodes-zapi-icarodev.git"
   },
   "main": "dist/index.js",
   "scripts": {
