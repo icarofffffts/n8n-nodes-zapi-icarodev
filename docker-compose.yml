@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - WEBHOOK_URL=http://localhost:5678/
+      - GENERIC_TIMEZONE=America/Sao_Paulo
+      - TZ=America/Sao_Paulo
+      # Habilitar nodes de comunidade
+      - N8N_CUSTOM_EXTENSIONS=/home/node/.n8n/custom
+      - NODE_FUNCTION_ALLOW_EXTERNAL=*
+    volumes:
+      # Dados do n8n (workflows, credenciais)
+      - n8n_data:/home/node/.n8n
+      # Seu node personalizado Z-API
+      - ./dist:/home/node/.n8n/custom/n8n-nodes-z-api-icarodev/dist:ro
+      - ./package.json:/home/node/.n8n/custom/n8n-nodes-z-api-icarodev/package.json:ro
+
+volumes:
+  n8n_data:
